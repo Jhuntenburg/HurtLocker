@@ -12,22 +12,32 @@ public class Parser {
         StringBuilder split = new StringBuilder();
         for (int i = 0; i < input.length; i++) {
             split.append(input[i])
-                    .append("\n");
+                    ;
         }
 //        System.out.println(split);
         return split.toString();
     }
-    public String splitAndListArray(String[] input){
-        StringBuilder splitWords = new StringBuilder();
-        for (String singleItem : input) {
-            String[] singleArray = singleItem.split("[^A-Za-z0-9.:/]");
-            splitWords.append( arrayToString(singleArray))
-                    .append("\n");
+//    public String splitAndListArray(String[] input){
+//        StringBuilder splitWords = new StringBuilder();
+//        for (String singleItem : input) {
+//            String[] singleArray = singleItem.split("[^A-Za-z0-9.:/]");
+//            splitWords.append( arrayToString(singleArray))
+//                    .append("\n");
+//
+//        }
+//        System.out.println(splitWords);
+//        return splitWords.toString();
+//    }
+public String splitAndListArray(String[] input){
+    StringBuilder splitWords = new StringBuilder();
+    for (String singleItem : input) {
+        String[] singleArray = singleItem.split("type");
+        splitWords.append( arrayToString(singleArray))
+                .append("\n");
 
-        }
-        System.out.println(splitWords);
-        return splitWords.toString();
     }
-
+    System.out.println(splitWords);
+    return splitWords.toString();
+}
 
 }
