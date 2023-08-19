@@ -19,17 +19,33 @@ public class Parser {
 
     public static List<String[]> parseArraysToList() throws Exception {
         ArrayList<String[]> listOfItems = new ArrayList<>();
-        for (String s: parseToStringArrays()) {
-           String[] parsed = s.split("[:;]");
-          String[] needed = new String[2];
-          needed[0] = parsed[1];
-          needed[1] = parsed[3];
-           listOfItems.add(needed);
+        for (String s : parseToStringArrays()) {
+            String[] parsed = s.split("[:;]");
+            String[] needed = new String[2];
+            needed[0] = parsed[1];
+            needed[1] = parsed[3];
+            listOfItems.add(needed);
         }
         return listOfItems;
     }
 
+    public static List<String[]> normalizeCase() throws Exception {
+        List<String[]> listOfItems = parseArraysToList();
+        for (String[] itemArray : listOfItems) {
+            for (String item : itemArray) {
+                if (!item.equals("")) {
+                   Character.toUpperCase(item.charAt(0));
+                    for (int i = 1; i < item.length(); i++) {
+                        Character.toLowerCase(item.charAt(i));
 
+                    }
+                }
+
+            }
+        }
+
+        return listOfItems;
+    }
 
 
 //    public String arrayToString(String[] input) {

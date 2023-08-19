@@ -31,7 +31,7 @@ public class Main {
 //            System.out.println(t);
 //            }
 //        }
-        List<String[]> listOfItems = Parser.parseArraysToList();
+        List<String[]> listOfItems = Parser.normalizeCase();
         for (String[] itemArray : listOfItems) {
             for (String item : itemArray) {
                 System.out.print(item + " ");
